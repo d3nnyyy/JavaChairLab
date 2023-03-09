@@ -24,16 +24,6 @@ public class Chair {
         return instance;
     }
 
-    @Override
-    public String toString() {
-        return "Chair{" +
-                "id=" + id +
-                ", maxWeight=" + maxWeight +
-                ", material='" + material + '\'' +
-                ", owner='" + owner + '\'' +
-                '}';
-    }
-
     public void occupy(){
         System.out.println("This chair is currently occupied by " + this.owner);
     }
