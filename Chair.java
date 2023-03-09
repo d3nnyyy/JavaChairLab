@@ -37,7 +37,8 @@ public class Chair {
     }
 
     public static void main(String[] args) {
-        Chair[] chairs = new Chair[5];
+        int lengthOfArray = 5;
+        Chair[] chairs = new Chair[lengthOfArray];
         chairs[0] = new Chair();
         chairs[1] = new Chair(1,200, "wood", "Petya");
         chairs[2] = new Chair(2,250, "metal", "Vasya");
