@@ -24,8 +24,9 @@ public class Chair {
         return instance;
     }
 
-    public void occupy(){
-        System.out.println("This chair is currently occupied by " + this.owner);
+
+    public void occupy(String owner){
+        System.out.println(owner + " occupied this chair");
     }
 
     public void release(){
@@ -36,31 +37,23 @@ public class Chair {
         return (this.owner != null);
     }
 
+
     public static void main(String[] args) {
-        int lengthOfArray = 5;
-        Chair[] chairs = new Chair[lengthOfArray];
+        int length = 5;
+        Chair[] chairs = new Chair[length];
         chairs[0] = new Chair();
         chairs[1] = new Chair(1,200, "wood", "Petya");
         chairs[2] = new Chair(2,250, "metal", "Vasya");
-
         Chair chair1 = Chair.getInstance();
-        chair1.setId(3);
-        chair1.setMaxWeight(100);
-        chair1.setMaterial("plastic");
-        chair1.setOwner(null);
-
         Chair chair2 = Chair.getInstance();
-        chair2.setId(4);
-        chair2.setMaxWeight(250);
-        chair2.setMaterial("leather");
-        chair2.setOwner(null);
-
         chairs[3] = chair1;
         chairs[4] = chair2;
 
         for (Chair chair : chairs){
-            System.out.println(chair.toString());
+            System.out.println(chair);
         };
+
+        chair1.occupy("Denys");
 
         System.out.println(chairs[1].getOwner());
         System.out.println(chairs[2].isOccupied());
