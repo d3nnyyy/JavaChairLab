@@ -7,7 +7,7 @@ import lombok.*;
 @ToString
 abstract public class Chair {
 
-    protected int maxWeight;
-    protected String material;
+    private int maxWeight;
+    private String material;
     public abstract void adjustPosition(int value);
 }
