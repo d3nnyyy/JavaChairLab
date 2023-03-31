@@ -11,3 +11,4 @@ abstract public class Chair {
     private String material;
     public abstract void adjustPosition(int value);
 }
+
