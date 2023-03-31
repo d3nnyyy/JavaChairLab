@@ -1,13 +1,10 @@
 package ua.lviv.iot.algo.part1.lab1;
-
 import lombok.Getter;
 import lombok.ToString;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-
 public class ChairManager extends AddChair{
 
     private static final List<Chair> chairs = new ArrayList<>();
@@ -36,7 +33,6 @@ public class ChairManager extends AddChair{
 
         ChairManager chairManager = new ChairManager();
 
-
         Chair feedingTable1 = new FeedingTable(40, "Wood", 0.8,2);
         Chair feedingTable2 = new FeedingTable(20, "Plastic", 0.6, 3);
 
@@ -56,12 +52,11 @@ public class ChairManager extends AddChair{
         chairManager.addChair(gamingChair1);
         chairManager.addChair(gamingChair2);
         chairManager.addChair(reclinerChair1);
-
         chairManager.addChair(reclinerChair2);
-//
-//        for (Chair chair : chairs){
-//            System.out.println(chair);
-//        }
+
+        for (Chair chair : chairs){
+              System.out.println(chair);
+          }
 
         List<Chair> chairsWithCertainMaterial = chairManager.findChairsByMaterial("Leather");
         chairsWithCertainMaterial.stream().forEach(s -> System.out.println(s));
