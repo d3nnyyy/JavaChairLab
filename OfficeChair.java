@@ -1,6 +1,7 @@
 package ua.lviv.iot.algo.part1.lab1;
 
 public class OfficeChair extends Chair{
+
     private int angle;
     private static int minAngle = 90;
     private static int maxAngle = 135;
