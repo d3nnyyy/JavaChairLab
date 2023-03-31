@@ -5,7 +5,6 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
-
 abstract public class Chair {
 
     protected int maxWeight;
