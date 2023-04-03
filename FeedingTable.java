@@ -1,13 +1,14 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import lombok.Getter;
 
 @Getter
 public class FeedingTable extends Chair {
 
-    private static double minHeight = 0.5;
-    private static double maxHeight = 1;
+    private final double minHeight = 0.5;
+    private final double maxHeight = 1;
     private double height;
-    private int childAge;
+    private final int childAge;
 
     FeedingTable(int maxWeight, String material,  double height, int childAge){
         super(maxWeight, material);

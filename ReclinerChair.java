@@ -2,8 +2,8 @@ package ua.lviv.iot.algo.part1.lab1;
 
 public class ReclinerChair extends Chair {
 
-    private static int minAngle = 90;
-    private static int maxAngle = 150;
+    private final int minAngle = 90;
+    private final int maxAngle = 150;
     private int angle;
 
     public ReclinerChair(int maxWeight, String material, int angle) {

@@ -1,13 +1,14 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import lombok.Getter;
 
 @Getter
 public class GamingChair extends Chair {
 
-    private static double minHeight = 1.2;
-    private static double maxHeight = 1.8;
+    private final double minHeight = 1.2;
+    private final double maxHeight = 1.8;
     private double height;
-    private boolean hasFootrest;
+    private final boolean hasFootrest;
 
     GamingChair(int maxWeight, String material, double height, boolean hasFootrest) {
         super(maxWeight, material);

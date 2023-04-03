@@ -1,8 +1,10 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import lombok.Getter;
-import lombok.ToString;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 @Getter
 public class ChairManager extends AddChair{
@@ -11,9 +13,10 @@ public class ChairManager extends AddChair{
 
     @Override
     List<Chair> findChairsByMaterial(String material) {
-        return chairs
+        Stream<Chair> chairStream = chairs
                 .stream()
-                .filter(i -> i.getMaterial() == material)
+                .filter(i -> Objects.equals(i.getMaterial(), material));
+        return chairStream
                 .toList();
     }
 
@@ -52,14 +55,15 @@ public class ChairManager extends AddChair{
         chairManager.addChair(gamingChair1);
         chairManager.addChair(gamingChair2);
         chairManager.addChair(reclinerChair1);
+
         chairManager.addChair(reclinerChair2);
 
         for (Chair chair : chairs){
-              System.out.println(chair);
-          }
+            System.out.println(chair);
+        }
 
         List<Chair> chairsWithCertainMaterial = chairManager.findChairsByMaterial("Leather");
-        chairsWithCertainMaterial.stream().forEach(s -> System.out.println(s));
+        chairsWithCertainMaterial.forEach(System.out::println);
 
         List<Chair> chairsWithCertainMaxWeight = chairManager.findChairsWithMaxWeightMoreThan(120);
         chairsWithCertainMaxWeight.stream().forEach(s -> System.out.println(s));

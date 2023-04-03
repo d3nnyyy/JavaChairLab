@@ -3,8 +3,8 @@ package ua.lviv.iot.algo.part1.lab1;
 public class OfficeChair extends Chair{
 
     private int angle;
-    private static int minAngle = 90;
-    private static int maxAngle = 135;
+    private final int minAngle = 90;
+    private final int maxAngle = 135;
 
     public OfficeChair(int maxWeight, String material , int angle){
         super(maxWeight, material);
