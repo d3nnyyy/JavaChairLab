@@ -3,20 +3,20 @@ package ua.lviv.iot.algo.part1.lab1;
 import lombok.Getter;
 
 @Getter
-public class GamingChair extends Chair {
+public class FeedingTable extends Chair {
 
-    private final double minHeight = 1.2;
-    private final double maxHeight = 1.8;
+    private final double minHeight = 0.5;
+    private final double maxHeight = 1;
     private double height;
-    private final boolean hasFootrest;
+    private final int childAge;
 
-    GamingChair(int maxWeight, String material, double height, boolean hasFootrest) {
+    FeedingTable(int maxWeight, String material,  double height, int childAge){
         super(maxWeight, material);
         if (height < minHeight || height > maxHeight) {
             throw new IllegalArgumentException("Height must be between " + minHeight + " and " + maxHeight);
         }
         this.height = height;
-        this.hasFootrest = hasFootrest;
+        this.childAge = childAge;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class GamingChair extends Chair {
     }
 
     @Override
-    public String toString() {
-        return "GamingChair has a height of " + height + " meters and " + (hasFootrest ? "has a footrest." : "does not have a footrest.");
+    public String toString(){
+        return "FeedingTable is for " + childAge + " years old child and has a height of " + height + " meters";
     }
 }

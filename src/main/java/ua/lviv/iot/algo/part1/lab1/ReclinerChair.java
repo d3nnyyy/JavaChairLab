@@ -1,5 +1,8 @@
 package ua.lviv.iot.algo.part1.lab1;
 
+import lombok.Getter;
+
+@Getter
 public class ReclinerChair extends Chair {
 
     private final int minAngle = 90;
