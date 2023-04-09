@@ -7,13 +7,13 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 @Getter
-public class ChairManager extends AddChair{
+public class ChairManager extends AddChair {
 
-    private static final List<Chair> chairs = new ArrayList<>();
+    private static final List<Chair> CHAIRS = new ArrayList<>();
 
     @Override
-    List<Chair> findChairsByMaterial(String material) {
-        Stream<Chair> chairStream = chairs
+    final List<Chair> findChairsByMaterial(final String material) {
+        Stream<Chair> chairStream = CHAIRS
                 .stream()
                 .filter(i -> Objects.equals(i.getMaterial(), material));
         return chairStream
@@ -21,15 +21,15 @@ public class ChairManager extends AddChair{
     }
 
     @Override
-    List<Chair> findChairsWithMaxWeightMoreThan(int maxWeight) {
-        return chairs
+    final List<Chair> findChairsWithMaxWeightMoreThan(final int maxWeight) {
+        return CHAIRS
                 .stream()
                 .filter(i -> i.getMaxWeight() > maxWeight)
                 .toList();
     }
 
-    void addChair(final Chair chair){
-        chairs.add(chair);
+    final void addChair(final Chair chair) {
+        CHAIRS.add(chair);
     }
 
 //    public static void main(String[] args){
@@ -58,7 +58,7 @@ public class ChairManager extends AddChair{
 //
 //        chairManager.addChair(reclinerChair2);
 //
-//        for (Chair chair : chairs){
+//        for (Chair chair : CHAIRS){
 //            System.out.println(chair);
 //        }
 //

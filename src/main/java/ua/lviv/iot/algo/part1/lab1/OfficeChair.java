@@ -3,33 +3,34 @@ package ua.lviv.iot.algo.part1.lab1;
 import lombok.Getter;
 
 @Getter
-public class OfficeChair extends Chair{
+public class OfficeChair extends Chair {
 
     private int angle;
-    private final int minAngle = 90;
-    private final int maxAngle = 135;
+    private static final int MIN_ANGLE = 90;
+    private static final int MAX_ANGLE = 135;
 
-    public OfficeChair(int maxWeight, String material , int angle){
+    public OfficeChair(final int maxWeight, final String material, final int angle) {
         super(maxWeight, material);
-        if (angle < minAngle || angle > maxAngle){
-            throw new IllegalArgumentException("Angle must be between " + minAngle + " and " + maxAngle);
+        if (angle < MIN_ANGLE || angle > MAX_ANGLE) {
+            throw new IllegalArgumentException("Angle must be between "
+                    + MIN_ANGLE + " and " + MAX_ANGLE);
         }
         this.angle = angle;
     }
 
     @Override
-    public void adjustPosition(int deltaAngle) {
-        if (this.angle + deltaAngle <= maxAngle && this.angle + deltaAngle >= minAngle) {
+    public final void adjustPosition(final int deltaAngle) {
+        if (this.angle + deltaAngle <= MAX_ANGLE && this.angle + deltaAngle >= MIN_ANGLE) {
             this.angle += deltaAngle;
-        } else if (this.angle + deltaAngle > maxAngle) {
-            this.angle = maxAngle;
+        } else if (this.angle + deltaAngle > MAX_ANGLE) {
+            this.angle = MAX_ANGLE;
         } else {
-            this.angle = minAngle;
+            this.angle = MIN_ANGLE;
         }
     }
 
     @Override
-    public String toString(){
+    public final String toString() {
         return "OfficeChair has an angle of " + angle + "degrees";
     }
 }

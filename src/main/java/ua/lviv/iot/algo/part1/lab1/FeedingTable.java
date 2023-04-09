@@ -5,33 +5,37 @@ import lombok.Getter;
 @Getter
 public class FeedingTable extends Chair {
 
-    private final double minHeight = 0.5;
-    private final double maxHeight = 1;
+    private static final double MIN_HEIGHT = 0.5;
+    private static final double MAX_HEIGHT = 1;
     private double height;
     private final int childAge;
 
-    FeedingTable(int maxWeight, String material,  double height, int childAge){
+    FeedingTable(final int maxWeight, final String material,  final double height, final int childAge) {
         super(maxWeight, material);
-        if (height < minHeight || height > maxHeight) {
-            throw new IllegalArgumentException("Height must be between " + minHeight + " and " + maxHeight);
+        if (height < MIN_HEIGHT || height > MAX_HEIGHT) {
+            throw new IllegalArgumentException(
+                    "Height must be between " + MIN_HEIGHT + " and " + MAX_HEIGHT
+            );
         }
         this.height = height;
         this.childAge = childAge;
     }
 
     @Override
-    public void adjustPosition(int deltaHeight) {
-        if (this.height + deltaHeight <= maxHeight && this.height + deltaHeight >= minHeight) {
+    public final void adjustPosition(final int deltaHeight) {
+        if (this.height + deltaHeight <= MAX_HEIGHT && this.height + deltaHeight >= MIN_HEIGHT) {
             this.height += deltaHeight;
-        } else if (this.height + deltaHeight > maxHeight) {
-            this.height = maxHeight;
-        } else if (this.height + deltaHeight < minHeight) {
-            this.height = minHeight;
+        } else if (this.height + deltaHeight > MAX_HEIGHT) {
+            this.height = MAX_HEIGHT;
+        } else if (this.height + deltaHeight < MIN_HEIGHT) {
+            this.height = MIN_HEIGHT;
         }
     }
 
     @Override
-    public String toString(){
-        return "FeedingTable is for " + childAge + " years old child and has a height of " + height + " meters";
+    public final String toString() {
+        return "FeedingTable is for "
+                + childAge + " years old child and has a height of "
+                + height + " meters";
     }
 }
