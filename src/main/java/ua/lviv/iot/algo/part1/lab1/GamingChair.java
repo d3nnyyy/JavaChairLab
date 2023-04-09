@@ -5,35 +5,35 @@ import lombok.Getter;
 @Getter
 public class GamingChair extends Chair {
 
-    private final double minHeight = 1.2;
-    private final double maxHeight = 1.8;
+    private static final double MIN_HEIGHT = 1.2;
+    private static final double MAX_HEIGHT = 1.8;
     private double height;
     private final boolean hasFootrest;
 
-    GamingChair(int maxWeight, String material, double height, boolean hasFootrest) {
+    GamingChair(final int maxWeight, final String material, final double height, final boolean hasFootrest) {
         super(maxWeight, material);
-        if (height > minHeight && height < maxHeight) {
+        if (height > MIN_HEIGHT && height < MAX_HEIGHT) {
             this.height = height;
             this.hasFootrest = hasFootrest;
-        }
-        else {
-            throw new IllegalArgumentException("Height must be between " + minHeight + " and " + maxHeight);
+        } else {
+            throw new IllegalArgumentException("Height must be between "
+                    + MIN_HEIGHT + " and " + MAX_HEIGHT);
         }
     }
 
     @Override
-    public void adjustPosition(int deltaHeight) {
-        if (this.height + deltaHeight <= maxHeight && this.height + deltaHeight >= minHeight) {
+    public final void adjustPosition(final int deltaHeight) {
+        if (this.height + deltaHeight <= MAX_HEIGHT && this.height + deltaHeight >= MIN_HEIGHT) {
             this.height += deltaHeight;
-        } else if (this.height + deltaHeight > maxHeight) {
-            this.height = maxHeight;
-        } else if (this.height + deltaHeight < minHeight) {
-            this.height = minHeight;
+        } else if (this.height + deltaHeight > MAX_HEIGHT) {
+            this.height = MAX_HEIGHT;
+        } else if (this.height + deltaHeight < MIN_HEIGHT) {
+            this.height = MIN_HEIGHT;
         }
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return "GamingChair has a height of " + height + " meters and " + (hasFootrest ? "has a footrest." : "does not have a footrest.");
     }
 }
