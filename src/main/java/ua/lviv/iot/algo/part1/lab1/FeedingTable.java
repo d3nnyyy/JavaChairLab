@@ -5,8 +5,8 @@ import lombok.Getter;
 @Getter
 public class FeedingTable extends Chair {
 
-    private static final double MIN_HEIGHT = 0.5;
-    private static final double MAX_HEIGHT = 1;
+    public static final double MIN_HEIGHT = 0.5;
+    public static final double MAX_HEIGHT = 1;
     private double height;
     private final int childAge;
 
@@ -19,6 +19,14 @@ public class FeedingTable extends Chair {
         }
         this.height = height;
         this.childAge = childAge;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + ", MIN_HEIGHT, MAX_HEIGHT, height, childAge";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + MIN_HEIGHT + ", " + MAX_HEIGHT + ", " + height + ", " + childAge;
     }
 
     @Override

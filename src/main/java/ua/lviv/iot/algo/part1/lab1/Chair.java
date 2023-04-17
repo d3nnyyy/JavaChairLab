@@ -9,7 +9,16 @@ import lombok.ToString;
 @ToString
 public abstract class Chair {
 
+    public static final String HEADERS = "maxWeight, material";
     private int maxWeight;
     private String material;
     public abstract void adjustPosition(int value);
+
+    public String getHeaders() {
+        return HEADERS;
+    }
+
+    public String toCSV() {
+        return maxWeight + ", " + material;
+    }
 }

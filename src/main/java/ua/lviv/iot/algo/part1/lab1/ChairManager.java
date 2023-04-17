@@ -48,15 +48,14 @@ public class ChairManager extends AddChair {
 //        Chair reclinerChair1 = new ReclinerChair(200, "Leather", 120);
 //        Chair reclinerChair2 = new ReclinerChair(180, "Fabric", 100);
 //
+//        chairManager.addChair(officeChair1);
 //        chairManager.addChair(feedingTable1);
 //        chairManager.addChair(feedingTable2);
-//        chairManager.addChair(officeChair1);
-//        chairManager.addChair(officeChair2);
 //        chairManager.addChair(gamingChair1);
+//        chairManager.addChair(officeChair2);
+//        chairManager.addChair(reclinerChair2);
 //        chairManager.addChair(gamingChair2);
 //        chairManager.addChair(reclinerChair1);
-//
-//        chairManager.addChair(reclinerChair2);
 //
 //        for (Chair chair : CHAIRS){
 //            System.out.println(chair);

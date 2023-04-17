@@ -5,8 +5,8 @@ import lombok.Getter;
 @Getter
 public class GamingChair extends Chair {
 
-    private static final double MIN_HEIGHT = 1.2;
-    private static final double MAX_HEIGHT = 1.8;
+    public static final double MIN_HEIGHT = 1.2;
+    public static final double MAX_HEIGHT = 1.8;
     private double height;
     private final boolean hasFootrest;
 
@@ -19,6 +19,14 @@ public class GamingChair extends Chair {
             throw new IllegalArgumentException("Height must be between "
                     + MIN_HEIGHT + " and " + MAX_HEIGHT);
         }
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + ", MIN_HEIGHT, MAX_HEIGHT, height, hasFootrest";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + MIN_HEIGHT + ", " + MAX_HEIGHT + ", " + height + ", " + hasFootrest;
     }
 
     @Override
