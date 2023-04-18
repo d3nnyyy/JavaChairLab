@@ -34,7 +34,7 @@ public class ChairWriterTest {
     }
 
     @Test
-    public void testEmptyWrite() {
+    public void testEmptyWrite() throws IOException {
         writer.writeToFile(chairs, RESULT_FILENAME);
         File file = new File(RESULT_FILENAME);
         Assertions.assertFalse(file.exists());
@@ -54,6 +54,9 @@ public class ChairWriterTest {
         writer.writeToFile(chairs, RESULT_FILENAME);
         Path expected = new File(RESULT_FILENAME).toPath();
         Path actual = new File(EXPECTED_FILENAME).toPath();
+
+        List<String> expectedLines = Files.readAllLines(expected);
+        List<String> actualLines = Files.readAllLines(actual);
 
         int linesCount = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(RESULT_FILENAME))) {
@@ -77,13 +80,11 @@ public class ChairWriterTest {
         }
         System.out.println("Number of lines in EXPECTED_FILENAME: " + linesCount);
 
-        List<String> expectedLines = Files.readAllLines(expected);
-        List<String> actualLines = Files.readAllLines(actual);
         assertEquals(expectedLines, actualLines);
     }
 
     @Test
-    public void testFileOverride() {
+    public void testFileOverride() throws IOException {
         writer.writeToFile(new ArrayList<>(), RESULT_FILENAME);
         testEmptyWrite();
     }

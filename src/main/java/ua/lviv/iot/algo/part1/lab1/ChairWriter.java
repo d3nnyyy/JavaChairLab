@@ -7,7 +7,10 @@ import java.util.List;
 
 public class ChairWriter {
 
-    public void writeToFile(final List<Chair> chairs, final String path) {
+    public static final String LINE_SEPARATOR = System.lineSeparator();
+
+
+    public void writeToFile(final List<Chair> chairs, final String path) throws IOException{
         if (chairs == null || chairs.isEmpty()) {
             return;
         }
@@ -18,18 +21,15 @@ public class ChairWriter {
             chairs.sort(Comparator.comparing((Chair c) -> c.getClass().getSimpleName()));
             Class<?> currentClass = null;
 
-            String lineSeparator = System.lineSeparator();
-
-            for (int i = 0; i < chairs.size(); i++) {
-                Chair chair = chairs.get(i);
+            for (var chair : chairs) {
                 Class<?> chairClass = chair.getClass();
 
                 if (chairClass != currentClass) {
-                    writer.write(chair.getHeaders() + lineSeparator);
+                    writer.write(chair.getHeaders() + LINE_SEPARATOR);
                     currentClass = chairClass;
                 }
 
-                writer.write(chair.toCSV() + lineSeparator);
+                writer.write(chair.toCSV() + LINE_SEPARATOR);
             }
 
         } catch (IOException e) {
