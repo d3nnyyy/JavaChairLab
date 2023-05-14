@@ -57,6 +57,10 @@ public class ChairManager extends AddChair {
 //        chairManager.addChair(gamingChair2);
 //        chairManager.addChair(reclinerChair1);
 //
+
+//        chairManager.addChair(reclinerChair2);
+//
+
 //        for (Chair chair : CHAIRS){
 //            System.out.println(chair);
 //        }

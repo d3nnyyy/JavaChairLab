@@ -7,6 +7,7 @@ public class FeedingTable extends Chair {
 
     public static final double MIN_HEIGHT = 0.5;
     public static final double MAX_HEIGHT = 1;
+
     private double height;
     private final int childAge;
 

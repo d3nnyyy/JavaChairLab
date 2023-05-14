@@ -5,8 +5,9 @@ import lombok.Getter;
 @Getter
 public class GamingChair extends Chair {
 
-    public static final double MIN_HEIGHT = 1.2;
-    public static final double MAX_HEIGHT = 1.8;
+    private static final double MIN_HEIGHT = 1.2;
+    private static final double MAX_HEIGHT = 1.8;
+
     private double height;
     private final boolean hasFootrest;
 
