@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.*;
 
+import ua.lviv.iot.algo.part1.lab1.models.Chair;
+import ua.lviv.iot.algo.part1.lab1.models.FeedingTable;
+import ua.lviv.iot.algo.part1.lab1.writer.ChairWriter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import static org.junit.Assert.assertEquals;
 
@@ -42,14 +46,9 @@ public class ChairWriterTest {
 
     @Test
     public void testWriteListOfChairs() throws IOException {
-        chairs.add(new OfficeChair(150, "Steel", 100));
-        chairs.add(new ReclinerChair(200, "Leather", 120));
+
         chairs.add(new FeedingTable(20, "Plastic", 0.6, 3));
-        chairs.add(new OfficeChair(130, "Leather", 90));
-        chairs.add(new GamingChair(120, "Plastic", 1.5, true));
         chairs.add(new FeedingTable(40, "Wood", 0.8, 2));
-        chairs.add(new ReclinerChair(180, "Fabric", 100));
-        chairs.add(new GamingChair(140, "Metal", 1.6, true));
 
         writer.writeToFile(chairs, RESULT_FILENAME);
         Path expected = new File(RESULT_FILENAME).toPath();

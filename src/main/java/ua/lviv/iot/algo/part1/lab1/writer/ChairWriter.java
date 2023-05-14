@@ -1,4 +1,6 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.writer;
+
+import ua.lviv.iot.algo.part1.lab1.models.Chair;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -9,14 +11,13 @@ public class ChairWriter {
 
     public static final String LINE_SEPARATOR = System.lineSeparator();
 
-
-    public void writeToFile(final List<Chair> chairs, final String path) throws IOException{
+    public void writeToFile(final List<Chair> chairs, final String path) throws IOException {
         if (chairs == null || chairs.isEmpty()) {
             return;
         }
         try (
                 Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8))
-                ) {
+        ) {
 
             chairs.sort(Comparator.comparing((Chair c) -> c.getClass().getSimpleName()));
             Class<?> currentClass = null;

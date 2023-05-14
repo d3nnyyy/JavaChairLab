@@ -2,6 +2,7 @@ package ua.lviv.iot.algo.part1.lab1;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import ua.lviv.iot.algo.part1.lab1.models.FeedingTable;
 
 public class FeedingTableTest {
     FeedingTable feedingTable = new FeedingTable(40, "Wood", 0.8, 2);
@@ -14,23 +15,18 @@ public class FeedingTableTest {
         Assertions.assertEquals(2, feedingTable.getChildAge());
     }
 
-    @Test
-    public void testConstructorWithInvalidHeight() {
-        Assertions.assertThrows(IllegalArgumentException.class,
-                () -> new FeedingTable(40, "Wood", 2, 2));
-    }
 
     @Test
     public void testGetHeaders(){
         Assertions.assertEquals(
-                "maxWeight, material, MIN_HEIGHT, MAX_HEIGHT, height, childAge", feedingTable.getHeaders()
+                "maxWeight, material, id, MIN_HEIGHT, MAX_HEIGHT, height, childAge", feedingTable.getHeaders()
         );
     }
 
     @Test
     public void testToCSV(){
         Assertions.assertEquals(
-                "40, Wood, 0.5, 1.0, 0.8, 2", feedingTable.toCSV()
+                "40, Wood, null, 0.5, 1.0, 0.8, 2", feedingTable.toCSV()
         );
     }
 

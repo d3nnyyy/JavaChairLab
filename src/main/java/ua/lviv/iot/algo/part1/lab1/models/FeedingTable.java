@@ -1,32 +1,33 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+
+@Setter
 @Getter
 public class FeedingTable extends Chair {
 
     public static final double MIN_HEIGHT = 0.5;
     public static final double MAX_HEIGHT = 1;
+    private Integer id;
     private double height;
     private final int childAge;
 
-    FeedingTable(final int maxWeight, final String material,  final double height, final int childAge) {
+    public FeedingTable(final int maxWeight, final String material, final double height, final int childAge) {
         super(maxWeight, material);
-        if (height < MIN_HEIGHT || height > MAX_HEIGHT) {
-            throw new IllegalArgumentException(
-                    "Height must be between " + MIN_HEIGHT + " and " + MAX_HEIGHT
-            );
-        }
         this.height = height;
         this.childAge = childAge;
     }
 
     public String getHeaders() {
-        return super.getHeaders() + ", MIN_HEIGHT, MAX_HEIGHT, height, childAge";
+        return super.getHeaders() + ", id, MIN_HEIGHT, MAX_HEIGHT, height, childAge";
     }
 
     public String toCSV() {
-        return super.toCSV() + ", " + MIN_HEIGHT + ", " + MAX_HEIGHT + ", " + height + ", " + childAge;
+        return super.toCSV() + ", " + id + ", " + MIN_HEIGHT + ", " + MAX_HEIGHT + ", " + height + ", " + childAge;
     }
 
     @Override
