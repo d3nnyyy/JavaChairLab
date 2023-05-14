@@ -29,10 +29,10 @@ public class OfficeChairTest {
         Assertions.assertEquals(100, officeChair.getAngle());
 
         officeChair.adjustPosition(100);
-        Assertions.assertEquals(135, officeChair.getAngle());
+        Assertions.assertEquals(OfficeChair.MAX_ANGLE, officeChair.getAngle());
 
         officeChair.adjustPosition(-100);
-        Assertions.assertEquals(90, officeChair.getAngle());
+        Assertions.assertEquals(OfficeChair.MIN_ANGLE, officeChair.getAngle());
     }
 
     @Test

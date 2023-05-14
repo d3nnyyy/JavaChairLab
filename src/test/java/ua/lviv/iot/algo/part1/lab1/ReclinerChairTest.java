@@ -28,9 +28,9 @@ public class ReclinerChairTest {
         reclinerChair.adjustPosition(0);
         Assertions.assertEquals(120, reclinerChair.getAngle());
         reclinerChair.adjustPosition(50);
-        Assertions.assertEquals(150, reclinerChair.getAngle());
+        Assertions.assertEquals(ReclinerChair.MAX_ANGLE, reclinerChair.getAngle());
         reclinerChair.adjustPosition(-100);
-        Assertions.assertEquals(90, reclinerChair.getAngle());
+        Assertions.assertEquals(ReclinerChair.MIN_ANGLE, reclinerChair.getAngle());
     }
 
     @Test

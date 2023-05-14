@@ -6,6 +6,7 @@ import lombok.Getter;
 public class OfficeChair extends Chair {
 
     private int angle;
+
     private static final int MIN_ANGLE = 90;
     private static final int MAX_ANGLE = 135;
 
@@ -16,6 +17,14 @@ public class OfficeChair extends Chair {
                     + MIN_ANGLE + " and " + MAX_ANGLE);
         }
         this.angle = angle;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + ", angle, MIN_ANGLE, MAX_ANGLE";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + angle + ", " + MIN_ANGLE + ", " + MAX_ANGLE;
     }
 
     @Override

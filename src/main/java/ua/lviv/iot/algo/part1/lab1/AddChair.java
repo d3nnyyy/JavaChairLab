@@ -8,5 +8,5 @@ public abstract class AddChair {
 
     abstract List<Chair> findChairsWithMaxWeightMoreThan(int maxWeight);
 
-    abstract void addChair(final Chair chair);
+    abstract void addChair(Chair chair);
 }

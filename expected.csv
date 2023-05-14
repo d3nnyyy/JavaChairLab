@@ -1,0 +1,12 @@
+maxWeight, material, MIN_HEIGHT, MAX_HEIGHT, height, childAge
+20, Plastic, 0.5, 1.0, 0.6, 3
+40, Wood, 0.5, 1.0, 0.8, 2
+maxWeight, material, MIN_HEIGHT, MAX_HEIGHT, height, hasFootrest
+120, Plastic, 1.2, 1.8, 1.5, true
+140, Metal, 1.2, 1.8, 1.6, true
+maxWeight, material, angle, MIN_ANGLE, MAX_ANGLE
+150, Steel, 100, 90, 135
+130, Leather, 90, 90, 135
+maxWeight, material, angle, MIN_ANGLE, MAX_ANGLE
+200, Leather, 120, 90, 150
+180, Fabric, 100, 90, 150

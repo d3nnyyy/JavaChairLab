@@ -21,13 +21,27 @@ public class FeedingTableTest {
     }
 
     @Test
+    public void testGetHeaders(){
+        Assertions.assertEquals(
+                "maxWeight, material, MIN_HEIGHT, MAX_HEIGHT, height, childAge", feedingTable.getHeaders()
+        );
+    }
+
+    @Test
+    public void testToCSV(){
+        Assertions.assertEquals(
+                "40, Wood, 0.5, 1.0, 0.8, 2", feedingTable.toCSV()
+        );
+    }
+
+    @Test
     public void testAdjustPosition() {
         feedingTable.adjustPosition(0);
         Assertions.assertEquals(0.8, feedingTable.getHeight());
         feedingTable.adjustPosition(1);
-        Assertions.assertEquals(1, feedingTable.getHeight());
+        Assertions.assertEquals(FeedingTable.MAX_HEIGHT, feedingTable.getHeight());
         feedingTable.adjustPosition(-2);
-        Assertions.assertEquals(0.5, feedingTable.getHeight());
+        Assertions.assertEquals(FeedingTable.MIN_HEIGHT, feedingTable.getHeight());
     }
 
     @Test

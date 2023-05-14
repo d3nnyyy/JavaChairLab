@@ -30,9 +30,9 @@ public class GamingChairTest {
         gamingChair.adjustPosition(0);
         Assertions.assertEquals(1.5, gamingChair.getHeight());
         gamingChair.adjustPosition(1);
-        Assertions.assertEquals(1.8, gamingChair.getHeight());
+        Assertions.assertEquals(GamingChair.MAX_HEIGHT, gamingChair.getHeight());
         gamingChair.adjustPosition(-2);
-        Assertions.assertEquals(1.2, gamingChair.getHeight());
+        Assertions.assertEquals(GamingChair.MIN_HEIGHT, gamingChair.getHeight());
     }
 
     @Test
