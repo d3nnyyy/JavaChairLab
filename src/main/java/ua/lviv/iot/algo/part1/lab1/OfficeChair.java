@@ -7,8 +7,8 @@ public class OfficeChair extends Chair {
 
     private int angle;
 
-    private static final int MIN_ANGLE = 90;
-    private static final int MAX_ANGLE = 135;
+    public static final int MIN_ANGLE = 90;
+    public static final int MAX_ANGLE = 135;
 
     public OfficeChair(final int maxWeight, final String material, final int angle) {
         super(maxWeight, material);
