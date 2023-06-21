@@ -5,12 +5,8 @@ import lombok.Getter;
 @Getter
 public class ReclinerChair extends Chair {
 
-
     public static final int MIN_ANGLE = 90;
     public static final int MAX_ANGLE = 150;
-
-    private static final int MIN_ANGLE = 90;
-    private static final int MAX_ANGLE = 150;
 
     private int angle;
 
